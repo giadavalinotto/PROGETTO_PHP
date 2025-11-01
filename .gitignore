@@ -1,0 +1,80 @@
+# ==========================
+#  GENERALE
+# ==========================
+
+# File temporanei del sistema operativo
+.DS_Store
+Thumbs.db
+
+# File temporanei dell’editor
+*.log
+*.tmp
+*.swp
+*.swo
+*.bak
+
+# ==========================
+#  AMBIENTE DI SVILUPPO
+# ==========================
+
+# VS Code / IDE vari
+.vscode/
+.idea/
+*.code-workspace
+
+# ==========================
+#  PHP SPECIFICO
+# ==========================
+
+# File di configurazione locali
+.env
+.env.local
+.env.*.local
+config.php
+config.local.php
+
+# Cache o sessioni
+cache/
+tmp/
+temp/
+sessions/
+logs/
+
+# Composer (se usi librerie PHP)
+vendor/
+composer.lock
+
+# PHPUnit (se fai test)
+.phpunit.result.cache
+
+# ==========================
+#  FRONTEND
+# ==========================
+
+# Node (se usi npm o build tools tipo webpack/vite)
+node_modules/
+dist/
+build/
+
+# File di dipendenze JS
+package-lock.json
+yarn.lock
+
+# ==========================
+#  ALTRO
+# ==========================
+
+# Backup
+*.bak
+*.old
+*.orig
+*.save
+
+# Output generati
+*.zip
+*.tar.gz
+*.tar
+*.rar
+
+# Cartelle di upload (facoltativo)
+uploads/
