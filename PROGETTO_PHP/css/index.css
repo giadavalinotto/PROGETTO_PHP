@@ -1,0 +1,316 @@
+/* =========================================
+   RESET & BASE STYLES
+========================================= */
+
+:root {
+  --primary-color: #007bff;
+  --primary-dark: #0056b3;
+  --secondary-color: #6c757d;
+  --accent-color: #dc3545;
+  --bg-light: #f8f9fa;
+  --text-dark: #212529;
+  --text-muted: #6c757d;
+  --radius: 0.75rem;
+  --transition: 0.3s ease;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+  box-shadow: var(--shadow);
+  transition: background-color var(--transition);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+  transition: color var(--transition);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+  color: var(--primary-color);
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero-section {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: #fff;
+  padding: 6rem 1rem;
+}
+
+.hero-section h1 {
+  letter-spacing: 1px;
+}
+
+.hero-section p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* =========================================
+   FILTRI CATALOGO
+========================================= */
+
+#catalog-filters {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+#catalog-filters input,
+#catalog-filters select {
+  border: 1px solid #ddd;
+  transition: all var(--transition);
+}
+
+#catalog-filters input:focus,
+#catalog-filters select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.15rem rgba(0, 123, 255, 0.25);
+}
+
+/* =========================================
+   CARDS LIBRI
+========================================= */
+
+.card {
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+  background-color: #fff;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.card-cover {
+  height: 180px;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  transition: opacity var(--transition);
+}
+
+.card:hover .card-cover {
+  opacity: 0.9;
+}
+
+.card-title {
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+.card-text {
+  font-size: 0.95rem;
+}
+
+.badge {
+  font-size: 0.85rem;
+  padding: 0.4em 0.6em;
+}
+
+/* =========================================
+   DETTAGLI LIBRO (details.show)
+========================================= */
+
+.details {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s ease-in-out;
+}
+
+.details.show {
+  max-height: 500px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.5s ease-in-out;
+}
+
+.details hr {
+  opacity: 0.2;
+}
+
+.details p {
+  font-size: 0.9rem;
+}
+
+.details .btn {
+  border-radius: var(--radius);
+  transition: all var(--transition);
+}
+
+.details .btn:hover {
+  background-color: #c82333;
+  transform: scale(1.03);
+}
+
+/* =========================================
+   FAQ SECTION
+========================================= */
+
+.accordion-item {
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.accordion-button {
+  background-color: #fff;
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: all var(--transition);
+}
+
+.accordion-button:not(.collapsed) {
+  color: var(--primary-dark);
+  background-color: rgba(0, 123, 255, 0.05);
+}
+
+.accordion-body {
+  background-color: #fff;
+  color: var(--text-muted);
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+  background-color: #121212;
+  color: #ddd;
+  box-shadow: var(--shadow);
+}
+
+footer h3, footer h4 {
+  color: #fff;
+  font-weight: 600;
+}
+
+footer a {
+  color: #ddd;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+footer a:hover {
+  color: var(--primary-color);
+}
+
+footer .bi {
+  color: var(--primary-color);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 4rem 1rem;
+  }
+
+  .card-cover {
+    height: 150px;
+  }
+}
+
+/* Footer moderno e accessibile */
+.footer-modern {
+  background: linear-gradient(135deg, #1b1f24, #2b2f36);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Linea decorativa superiore */
+.footer-modern::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #0d6efd, transparent);
+  opacity: 0.5;
+}
+
+/* Testo secondario con contrasto ottimale */
+.text-light-emphasis {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Wrapper mappa */
+.map-wrapper {
+  width: 100%;
+  max-width: 350px;
+  aspect-ratio: 4 / 3;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.map-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Icone social: focus e hover accessibili */
+.social-icons a {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.social-icons a:hover,
+.social-icons a:focus {
+  color: #0d6efd !important;
+  transform: scale(1.1);
+  outline: none;
+}
+.social-icons a:focus {
+  outline: 2px solid #0d6efd;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Colori personalizzati per le icone social */
+.social-icons a[aria-label="Facebook"]:hover { color: #1877f2 !important; }
+.social-icons a[aria-label="Instagram"]:hover { color: #e1306c !important; }
+.social-icons a[aria-label="YouTube"]:hover { color: #ff0000 !important; }
+
+/* Responsività e leggibilità */
+@media (max-width: 768px) {
+  .footer-modern .row {
+    text-align: center;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+}
